@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT restaurant (fermeture?,menu*)>
+<!ATTLIST restaurant nom CDATA #REQUIRED
+	  ville CDATA #REQUIRED
+	  etoile CDATA #REQUIRED>
+<!ELEMENT fermeture (#PCDATA)>
+<!ELEMENT menu EMPTY>
+<!ATTLIST menu nom CDATA #REQUIRED
+	  prix CDATA #REQUIRED>

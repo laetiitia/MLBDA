@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT base (films|dvd|abonnes|empres)*>
+
+<!ELEMENT films (synopsis)>
+<!ATTLIST films noFilm ID #REQUIRED
+	  titre CDATA #REQUIRED
+	  nationalite CDATA #REQUIRED
+	  realisateur CDATA #REQUIRED
+	  couleur CDATA #REQUIRED
+	  annee CDATA #REQUIRED
+	  genre CDATA #REQUIRED
+	  duree CDATA #REQUIRED>
+
+<!ELEMENT acteur>
+<!ATTLIST acteur noFilm IDREF #REQUIRED
+	  nom CDATA #REQUIRED>
+
+<!ELEMENT dvd EMPTY>
+<!ATTLIST dvd noFilm IDREF #REQUIRED
+	  noexemplaire ID #REQUIRED
+	  statut CDATA #REQUIRED
+	  support CDATA #REQUIRED>
+
+<!ELEMENT abonnes (adresse)>
+<!ATTLIST abonnes code ID #REQUIRED
+	  nom CDATA #REQUIRED
+	  prenom CDATA #REQUIRED
+	  telephone CDATA #REQUIRED
+	  email CDATA #REQUIRED
+	  banque CDATA #REQUIRED
+	  guichet CDATA #REQUIRED
+	  compte CDATA #REQUIRED
+	  nbemprunts CDATA #REQUIRED>
+
+<!ELEMENT adresse (norue,code_postal,ville,batiment?,etage?,digicode?)>
+<!ELEMENT norue (#PCDATA)>
+<!ELEMENT code_postal (#PCDATA)>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT batiment (#PCDATA)>
+<!ELEMENT etage (#PCDATA)>
+<!ELEMENT digicode (#PCDATA)>
+
+<!ELEMENT empres>
+<!ATTLIST empres nofilm IDREF #REQUIRED
+	  noexemplaire IDREF #REQUIRED
+	  codeAbonne CDATA #REQUIRED
+	  dateEmpRes CDATA #REQUIRED>
+

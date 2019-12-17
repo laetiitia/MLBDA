@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE base SYSTEM "videotheque.dtd">
+
+<base>
+  <films noFilm="f1" titre="abc" nationalite="fr" realisateur="Jean" couleur="bleu" annee="2000" genre="a" duree="70" >
+    <synopsis>
+      c'est bien
+    </synopsis>
+  </films>
+  <films noFilm="f2" titre="abcd" nationalite="fr" realisateur="Jean" couleur="bleu" annee="2000" genre="a" duree="70" >
+    <synopsis>
+      c'est mieux
+    </synopsis>
+  </films>
+
+  <abonnes nom="pierre" prenom="feuille" telephone="0111" email="az@az.fr" banque="b" guichet="a" compte="a" nbemprunts="1">
+    <adresse>
+      <norue>1</norue>
+      <code_postal>75013</code_postal>
+      <ville>paris</ville>
+    </adresse>
+  </abonnes>
+  
+
+  <abonnes nom="ciseaux" prenom="puit" telephone="0111" email="az@az.fr" banque="b" guichet="a" compte="a" nbemprunts="1">
+    <adresse>
+      <norue>2</norue>
+      <code_postal>75013</code_postal>
+      <ville>paris</ville>
+    </adresse>
+  </abonnes>
+  <!--la suite...-->
+
+    
+</base>

@@ -1,0 +1,91 @@
+-- compléter l'entête 
+-- ==================
+
+-- NOM    :
+-- Prénom :
+
+-- NOM    :
+-- Prénom :
+
+-- Groupe :
+-- binome :
+
+-- ================================================
+
+set sqlbl on
+
+
+-- nettoyer le compte
+@vider
+
+-- Définition des types de données
+
+prompt essai
+
+create type T_un_type as object (
+ un_attribut Number
+);
+@compile
+--CAO
+
+CREATE TYPE Matiere as Object(
+nom VARCHAR2(20),
+prix_kilo NUMBER,
+masse_vol NUMBER
+);
+@compile
+
+
+CREATE TYPE Piece as Object(
+nom VARCHAR2(20)
+)not final;
+@compile
+
+CREATE TYPE Piece_base UNDER Piece(
+mat ref Matiere) not final;
+@compile
+
+CREATE TYPE P_Cube under Piece_base(
+cote NUMBER);
+@compile
+
+CREATE TYPE P_Sphere under Piece_base(
+rayon NUMBER);
+@compile
+
+CREATE TYPE P_Cylindre under Piece_base(
+diametre NUMBER,
+hauteur NUMBER);
+@compile
+
+CREATE TYPE P_Para under Piece_base(
+hauteur NUMBER,
+largeur NUMBER,
+profondeur NUMBER);
+@compile
+
+CREATE TYPE Piece_quantite as OBJECT (
+quantite NUMBER,
+p ref Piece);
+@compile
+
+CREATE TYPE L_Piece as TABLE OF Piece_quantite;
+@compile
+
+
+
+CREATE TYPE Piece_compo UNDER Piece(
+cout_assemble NUMBER,
+liste_p L_Piece);
+@compile
+
+CREATE TYPE Piece_composite_quantite as OBJECT (
+piece ref Piece_compo,
+quantite Number);
+@compile
+
+-- liste de tous les types créés
+@liste
+
+
+

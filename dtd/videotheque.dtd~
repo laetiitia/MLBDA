@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT films (synopsis)>
+<!ATTLIST films noFilm ID #REQUIRED
+	  titre CDATA #REQUIRED
+	  nationalite CDATA #REQUIRED
+	  realisateur CDATA #REQUIRED
+	  couleur CDATA #REQUIRED
+	  annee CDATA #REQUIRED
+	  genre CDATA #REQUIRED
+	  duree CDATA #REQUIRED>
+
+<!ELEMENT acteur>
+<!ATTLIST acteur noFilm IDREF #REQUIRED
+	  nom CDATA #REQUIRED>
+
+<!ELEMENT dvd EMPTY>
+<!ATTLIST dvd ndvd ID #REQUIRED
+	  nofilm IDREF #REQUIRED
+	  noexemplaire IDREF #REQUIRED
+	  statut CDATA #REQUIRED
+	  support CDATA #REQUIRED>

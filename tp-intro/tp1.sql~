@@ -1,0 +1,66 @@
+-- MABD TP1 SQL avec la base MONDIAL
+
+
+-- -------------------- binome -------------------------
+-- NOM
+-- Prenom
+
+-- NOM
+-- Prenom
+-- -----------------------------------------------------
+
+-- pour se connecter à oracle:
+-- sqlplus E1234567/E1234567@oracle
+-- remplacer E12345657 par la lettre E suivie de votre numéro de login
+
+set sqlbl on
+set linesize 150
+
+prompt schema de la table Country
+desc Country
+
+prompt schema de la table City
+desc City
+
+prompt schema de la table IsMember
+desc IsMember
+
+prompt schema de la table City
+desc City
+
+-- pour afficher un nuplet entier sur une seule ligne
+column name format A15
+column capital format A15
+column province format A20
+
+-- Requete 0
+
+select * from Country where name = 'France';
+
+-- Requete 10
+prompt
+
+select o.name, count(*), SUM(c.population)
+from Organization o, Country c, isMember i
+where i.country=c.code and i.organization=o.abbrevation
+Group by o.name;
+
+
+
+
+
+-- Requete 11
+prompt 
+
+select o.name, count(*), SUM(c.population)
+from Organization o, Country c, isMember i
+where i.country=c.code and i.organization=o.abbrevation
+Group by o.name
+having count(*)>100;
+
+-- Requete 12
+prompt
+
+select c.name, m.name
+from Country c, Mountain m, geo_mountain g, encompasses e
+where e.continent= 'America' and e.country=c.country and g.country=c.code and g.mountain=m.name
